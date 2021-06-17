@@ -1,0 +1,24 @@
+// variable
+$primary: #b71c1c;
+$secondary: #f05545;
+$dark: #7f0000;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.nav-wrapper {
+  background-color: $primary;
+}
+.nav {
+  height: 50px;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: 50px;
+
+  h1 {
+    color: white;
+    text-align: left;
+  }
+}
