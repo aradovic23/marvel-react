@@ -9,6 +9,7 @@ const Main = (props) => {
   const { filter } = props;
   const jpg = ".jpg";
   const { favorites } = props;
+  const { deleteItem } = props;
   console.log(favorites);
 
   return (
@@ -37,7 +38,17 @@ const Main = (props) => {
               <img src={`${e.thumbnail.path}${jpg}`} alt="no-img"></img>
               <div className="content">
                 <h1>{e.name}</h1>
-                <span>{favorites ? <FaTrashAlt /> : ""}</span>
+                <span>
+                  {favorites ? (
+                    <FaTrashAlt
+                      onClick={() => {
+                        deleteItem(filter.id);
+                      }}
+                    />
+                  ) : (
+                    ""
+                  )}
+                </span>
               </div>
             </div>
           ))}

@@ -1,12 +1,8 @@
 import React from 'react'
 import './character.scss'
+import {Link} from 'react-router-dom'
+const Character = ({setId, name, img, id}) => {
 
-const Character = (props) => {
-
-    const {setId} = props
-    const {name} = props
-    const {img} = props
-    const {id} = props
     const jpg = '.jpg'
 
 
@@ -16,7 +12,7 @@ const Character = (props) => {
             <img src={`${img}${jpg}`} alt="no-img" />
             <div className='buttons'>
             <button  onClick = {()=>setId(id)} >Add</button>
-            <button>Info</button>
+            <Link to={`/character/${id}`}><button>Info</button></Link>
             </div>
         </div>
     )
