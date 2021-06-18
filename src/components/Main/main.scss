@@ -1,29 +1,30 @@
 // variable
-$primary: #b71c1c;
-$secondary: #f05545;
-$dark: #7f0000;
+$black: #393939;
+$red: #e62429;
 
 .search-box {
   display: flex;
+  justify-content: center;
   margin-top: 30px;
-  margin-left: 50px;
   input {
-    width: 250px;
+    width: 400px;
     height: 30px;
     border-radius: 5px;
     border: none;
     border: 1px solid #ccc;
   }
   button {
-    background-color: $primary;
+    background-color: $red;
     border: none;
     border-radius: 5px;
     color: white;
     margin-left: 5px;
     width: 80px;
+    font-weight: bold;
+    text-transform: uppercase;
 
     &:active {
-      background-color: $dark;
+      background-color: $black;
     }
   }
 }
@@ -41,7 +42,6 @@ $dark: #7f0000;
   align-items: center;
   margin-left: 30px;
   margin-top: 30px;
-  margin-right: 30px;
 }
 
 .side-container {
@@ -50,27 +50,32 @@ $dark: #7f0000;
   width: 100%;
   margin-right: 30px;
   margin-top: 30px;
+  border-radius:5px;
+
   h1 {
-    color: $dark;
+    padding-top: 10px;
+    color: $black;
     size: 25px;
   }
+
 
   .sidebar-team {
     display: flex;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 10px;
     border: 1px solid #ccc;
     height: 100px;
     width: 100%;
     border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
     img {
       width: 100px;
       height: 100px;
-      border-radius: 10px;
+      border-radius: 5px;
       padding: 5px;
+      margin-bottom: 10px;
     }
 
     .content {
@@ -79,7 +84,7 @@ $dark: #7f0000;
       align-items: center;
       width: 100%;
       &:hover span {
-        color: $dark;
+        color: $red;
         display: inline;
       }
     }
@@ -87,14 +92,14 @@ $dark: #7f0000;
     h1 {
       font-size: 20px;
       margin-left: 30px;
-      color: $dark;
+      color: $black;
+      padding: 0;
     }
 
     span {
-      font-size: 36px;
+      font-size: 30px;
       text-align: right;
       margin-right: 30px;
-      color: $dark;
       display: none;
     }
   }

@@ -2,6 +2,7 @@ import React from "react";
 import "./main.scss";
 import Character from "../Character/Character";
 import { FaTrashAlt } from "react-icons/fa";
+import { MdSearch } from "react-icons/md";
 
 const Main = (props) => {
   const { data } = props;
@@ -15,7 +16,7 @@ const Main = (props) => {
   return (
     <div>
       <div className="search-box">
-        <input type="text" name="search" id="search" />
+        <input type="text" name="search" id="search" placeholder='Search for more characters'/>
         <button>Go</button>
       </div>
       <div className="main-container">
