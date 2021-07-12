@@ -1,27 +1,33 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./main.scss";
 import Character from "../Character/Character";
 import { FaTrashAlt } from "react-icons/fa";
-import { MdSearch } from "react-icons/md";
 
-const Main = (props) => {
-  const { data } = props;
-  const { setId } = props;
-  const { filter } = props;
+
+const Main = ({data, setId, filter, favorites, deleteItem}) => {
   const jpg = ".jpg";
-  const { favorites } = props;
-  const { deleteItem } = props;
-  console.log(favorites);
+  const [search, setSearch] = useState('')
+
+  const [filtered, setFiltered] = useState([]);
+
+  useEffect(() => {
+    setFiltered(
+      data?.filter((e) =>
+        e.name.toLowerCase().includes(search.toLowerCase())
+      )
+    );
+  }, [search, data]);
+
 
   return (
     <div>
       <div className="search-box">
-        <input type="text" name="search" id="search" placeholder='Search for more characters'/>
-        <button>Go</button>
+        <input type="text" name="search" id="search" placeholder='Search for more characters' onChange={(e) => setSearch(e.target.value)}
+/>
       </div>
       <div className="main-container">
         <div className="card-container">
-          {data.map((e) => (
+          {filtered?.map((e) => (
             <Character
               setId={setId}
               img={e.thumbnail.path}

@@ -1,5 +1,4 @@
 import "./CharacterPage.scss";
-import { useHistory } from "react-router-dom";
 import { MdArrowBack} from "react-icons/md";
 
 const CharacterPage = (props) => {
@@ -8,16 +7,12 @@ const CharacterPage = (props) => {
   const { data } = props;
   const {goBack} = props.history
 
-  console.log(goBack)
 
-  console.log(id);
-  console.log(data);
+  const hero = data.find((e) => e.id === parseInt(id));
 
-  const hero = data.find((e) => e.id == id);
-  console.log(hero.comics.items);
-
-  
-
+  if (!hero) {
+    return null;
+  }
 
   return (
     <div className="hero-div">
